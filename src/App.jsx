@@ -1,5 +1,5 @@
 import "./styles/index.css";
-
+import MainApp from "./components/MainApp";
 /* 
 Your store item should have the following structure
 
@@ -12,5 +12,7 @@ Your store item should have the following structure
 */
 
 export default function App() {
-  return <div className="App">This is where React happens</div>;
+  return <div className="App">
+    <MainApp />
+    </div>;
 }
