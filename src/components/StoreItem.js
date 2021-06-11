@@ -1,10 +1,15 @@
-const StoreItem = () => {
+const StoreItem = ({
+  item,
+  index,
+  selectedStoreItem,
+  setSelectedStoreItem,
+}) => {
   return (
-    <li>
-      <div class='store--item-icon'>
-        <img src='assets/icons/001-beetroot.svg' alt='beetroot' />
+    <li key={index}>
+      <div className='store--item-icon'>
+        <img src={`/assets/icons/${item.id}.svg`} alt={item.name} />
       </div>
-      <button>Add to cart</button>
+      <button onClick={() => setSelectedStoreItem(item)}>Add to cart</button>
     </li>
   );
 };

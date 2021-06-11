@@ -1,21 +1,41 @@
-const MainApp = () => {
+import StoreItem from './StoreItem';
+import CartItem from './CartItem';
+import { useState } from 'react';
+
+const MainApp = ({ storeItems }) => {
+  // can we select a store item?
+  const [selectedStoreItem, setSelectedStoreItem] = useState([]);
+
   return (
     <div>
       <header id='store'>
         <h1>Greengrocers</h1>
-        <ul class='item-list store--item-list'></ul>
+        <ul className='item-list store--item-list'>
+          {storeItems.map((item, index) => (
+            <StoreItem
+              selectedStoreItem={selectedStoreItem}
+              setSelectedStoreItem={setSelectedStoreItem}
+              item={item}
+              index={index}
+            />
+          ))}
+        </ul>
       </header>
       <main id='cart'>
         <h2>Your Cart</h2>
-        <div class='cart--item-list-container'>
-          <ul class='item-list cart--item-list'></ul>
+        <div className='cart--item-list-container'>
+          <ul className='item-list cart--item-list'>
+            {storeItems.map((item, index) => (
+              <CartItem item={item} index={index} />
+            ))}
+          </ul>
         </div>
-        <div class='total-section'>
+        <div className='total-section'>
           <div>
             <h3>Total</h3>
           </div>
           <div>
-            <span class='total-number'>£0.00</span>
+            <span className='total-number'>£0.00</span>
           </div>
         </div>
       </main>
