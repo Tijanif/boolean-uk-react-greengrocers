@@ -4,14 +4,6 @@ const StoreItem = ({
   selectedStoreItem,
   setSelectedStoreItem,
 }) => {
-  const updatedstoreItems = (storeItem) => {
-    let newItem = selectedStoreItem.map(() =>
-      selectedStoreItem.id === storeItem.id
-        ? { ...selectedStoreItem, storeItem }
-        : selectedStoreItem
-    );
-    setSelectedStoreItem(newItem);
-  };
   return (
     <li key={index}>
       <div className='store--item-icon'>
