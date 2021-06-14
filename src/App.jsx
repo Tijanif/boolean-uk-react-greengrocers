@@ -91,7 +91,7 @@ export default function App() {
 
   const [storeItems, setStoreItems] = useState(groceries)
  
-  // const [cartItems, setCartItem] = useState([])
+  const [cartItems, setCartItem] = useState([])
 
 
   return <div className="App">
